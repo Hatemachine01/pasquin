@@ -10,11 +10,11 @@ describe 'user navigation' do
       fill_in 'user[password_confirmation]', with: "password"
       fill_in 'user[first_name]', with: "Jon"
       fill_in 'user[last_name]', with: "Snow"
- 
+      
 
       click_on "Sign up"
 
-      expect(page).to have_content("Pasquin")
+      expect(page).to have_content("Welcome")
     end
   end
 end

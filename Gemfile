@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 
 #ADDED GEMS
 gem 'devise', '~> 4.2'
+gem 'bootstrap-sass'
+gem 'jquery-rails'
+
 
 group :development, :test do
   
