@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+   before do
+      @user = User.create(email: "test@test.com", password: "password", password_confirmation: "password", first_name: "Jon", last_name: "Snow")  
+  end
+  
   describe 'creation' do
+     
     
-    before do
-      @user = User.create(email: "test@test.com", password: "password", password_confirmation: "password", first_name: "Jon", last_name: "Snow")
-    end
-
     it 'should be able to be created if valid' do
       
       expect(@user).to be_valid
@@ -32,10 +33,17 @@ RSpec.describe User, type: :model do
       end
       
       it 'should ensure that all emails are unique' do
- 	   duplicate_username_user = User.create(email: "test@test.com", password: "password", password_confirmation: "password", first_name: "Jon", last_name: "Snow")
+ 	     duplicate_username_user = User.create(email: "test@test.com", password: "password", password_confirmation: "password", first_name: "Jon", last_name: "Snow")
   	   
   	   expect(duplicate_username_user).to_not be_valid
       end
-    end
+  
+      it ' should have many posts' do 
+       relation = described_class.reflect_on_association(:posts)
+    
+       expect(relation.macro).to eq(:has_many)
+      end
+    end  
   end
 end
+ 

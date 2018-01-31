@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   after_initialize :set_defaults
 
+  ##Database Associations
+  has_many :posts
+
   ##Validations
 
   validates_presence_of :first_name, :last_name
