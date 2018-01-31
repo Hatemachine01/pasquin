@@ -13,7 +13,7 @@ RSpec.describe Post, type: :model do
       expect(@post).to be_valid
     end
 
-    it ' should have a default value of 0 for likes' do
+    it 'should have a default value of 0 for likes' do
     
       expect(@post.likes).to eq(0)
     end
