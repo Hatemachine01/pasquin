@@ -11,6 +11,7 @@ class User < ApplicationRecord
   ##Validations
 
   validates_presence_of :first_name, :last_name
+  validates_length_of :first_name, :last_name, :minimum => 3, :maximum => 30
 
   private
 

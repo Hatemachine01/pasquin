@@ -30,12 +30,20 @@ RSpec.describe User, type: :model do
   	   
   	   expect(duplicate_username_user).to_not be_valid
       end
+
+       it 'should not have a first_name and last_name longer than 30 characters' do
+        @user.first_name = 'THISNAMEISWAYTOLONGTOBEAREALNAMEANDITSHOULDNOTWORKTHISLASTNAMEISWAYTOLONGTOBEAREALNAMEANDITSHOULDNOTWORK'
+        @user.last_name =  'THISLASTNAMEISWAYTOLONGTOBEAREALNAMEANDITSHOULDNOTWORKTHISLASTNAMEISWAYTOLONGTOBEAREALNAMEANDITSHOULDNOTWORK'
+        
+        expect(@user).to_not be_valid
+      end
   
       it ' should have many posts' do 
        relation = described_class.reflect_on_association(:posts)
     
        expect(relation.macro).to eq(:has_many)
       end
+    
     end  
   end
 end
