@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :comments
 
   #Validations
   validates_presence_of :title, :body, :date

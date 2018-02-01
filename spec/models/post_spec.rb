@@ -27,4 +27,12 @@ RSpec.describe Post, type: :model do
       expect(@post).to_not  be_valid
     end 
   end
+
+  describe 'Database Asssociations' do
+    it 'should have many comments' do
+      relation = described_class.reflect_on_association(:comments)
+    
+      expect(relation.macro).to eq(:has_many)
+    end
+  end
 end
