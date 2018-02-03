@@ -5,6 +5,9 @@ require 'spec_helper'
       abort("The Rails environment is running in production mode!") if Rails.env.production?
       require 'rspec/rails'
 
+      include Warden::Test::Helpers
+      Warden.test_mode!
+
       ActiveRecord::Migration.maintain_test_schema!
 
       RSpec.configure do |config|
