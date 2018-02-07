@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'Post navigation' do
   before do 
-       user = FactoryGirl.create(:user)
-       login_as(user, :scope => :user)
+       @user = FactoryGirl.create(:user)
+       login_as(@user, :scope => :user)
        @post =  Post.create(body: "TEXT ", title: "TITLE",  user_id: 1 )
     end
   
@@ -37,6 +37,18 @@ describe 'Post navigation' do
       expect(page).to have_content("EDITED")
     end
 
+    it 'cannot be edited by a non authorized user' do
+      
+      logout(@user)
+      non_authorized_user = FactoryGirl.create(:non_authorized_user)
+      login_as(non_authorized_user, :scope => :user)
+      
+
+      visit edit_post_path(@post)
+
+      expect(current_path).to eq(root_path)
+    end
+
     it 'can be deleted' do
   
       visit post_path(@post)
@@ -44,5 +56,8 @@ describe 'Post navigation' do
 
       expect{ click_on 'Delete'}.to change(Post, :count).by(-1)
     end
+
+    
+  
   end
 end

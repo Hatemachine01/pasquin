@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.2'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'pundit'
 
 
 group :development, :test do

@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
       end
    
       it 'should ensure that all emails are unique' do
- 	     duplicate_username_user = User.create(email: "test@test.com", password: "password", password_confirmation: "password", first_name: "Jon", last_name: "Snow")
+ 	     duplicate_username_user = FactoryGirl.create(:duplicate_email_user)
   	   
   	   expect(duplicate_username_user).to_not be_valid
       end

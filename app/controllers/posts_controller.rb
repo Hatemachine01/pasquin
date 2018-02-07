@@ -25,6 +25,7 @@ before_action :set_post , only:  [:show , :edit, :update , :destroy]
   	end
 
   	def edit
+      authorize @post 
   	end
 
 
@@ -35,7 +36,7 @@ before_action :set_post , only:  [:show , :edit, :update , :destroy]
 
 
   	def update
-  		
+      
   		if @post.update(post_params)
   			redirect_to @post, notice: "Post updated succesfully"
   		else
