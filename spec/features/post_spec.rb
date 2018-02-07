@@ -36,5 +36,13 @@ describe 'Post navigation' do
 
       expect(page).to have_content("EDITED")
     end
+
+    it 'can be deleted' do
+  
+      visit post_path(@post)
+
+
+      expect{ click_on 'Delete'}.to change(Post, :count).by(-1)
+    end
   end
 end

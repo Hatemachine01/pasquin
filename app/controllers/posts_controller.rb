@@ -1,8 +1,13 @@
 class PostsController < ApplicationController
 before_action :authenticate_user!
-before_action :set_post , only:  [:show , :edit, :update]
+before_action :set_post , only:  [:show , :edit, :update , :destroy]
 
-	def new
+	def index
+    @post = Post.all
+  end
+
+
+  def new
 		@post = Post.new
 	end
 
@@ -14,13 +19,20 @@ before_action :set_post , only:  [:show , :edit, :update]
 	  	else
 	   		render :new
   		end
-  	end
+  end
 
   	def show
   	end
 
   	def edit
   	end
+
+
+    def destroy
+      @post.delete
+      redirect_to posts_path, notice: "Your Post Was Deleted succesfully"
+    end
+
 
   	def update
   		
