@@ -5,6 +5,7 @@ describe 'Post navigation' do
        @user = FactoryGirl.create(:user)
        login_as(@user, :scope => :user)
        @post =  Post.create(body: "TEXT ", title: "TITLE",  user_id: 1 )
+       @non_authorized_user = FactoryGirl.create(:non_authorized_user)
     end
   
   describe 'creation' do
@@ -40,8 +41,7 @@ describe 'Post navigation' do
     it 'cannot be edited by a non authorized user' do
       
       logout(@user)
-      non_authorized_user = FactoryGirl.create(:non_authorized_user)
-      login_as(non_authorized_user, :scope => :user)
+      login_as(@non_authorized_user, :scope => :user)
       
 
       visit edit_post_path(@post)
@@ -49,15 +49,20 @@ describe 'Post navigation' do
       expect(current_path).to eq(root_path)
     end
 
+     it 'can only be deleted by its owner' do
+     
+      login_as(@non_authorized_user, :scope => :user)
+      visit post_path(@post)
+      click_on 'Delete'
+      
+      expect(current_path).to eq(root_path)      
+    end
+    
     it 'can be deleted' do
-  
+     
       visit post_path(@post)
 
-
       expect{ click_on 'Delete'}.to change(Post, :count).by(-1)
-    end
-
-    
-  
+    end   
   end
 end
