@@ -38,6 +38,8 @@ gem 'devise', '~> 4.2'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'pundit'
+gem 'administrate'
+gem 'bourbon'
 
 
 group :development, :test do
