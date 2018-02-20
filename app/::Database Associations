@@ -230,8 +230,12 @@ http://guides.railsgirls.com/devise
 			end
 
 
+//Monday Feb 19, 2018
+
+Implement INDEX html + Javascript
 
 // To-do
 
 
 	Check Pundit documentation
+	Check User Permissions
