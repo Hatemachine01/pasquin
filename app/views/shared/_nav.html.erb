@@ -124,50 +124,27 @@
               </span>
             </button> <!-- end Side menu button -->
 
-            <!-- Mobile logo -->
-            <a href="index.html" class="logo logo--mobile d-lg-none">
-              <img class="logo__img" src="img/logo_mobile.png" srcset="img/logo_mobile.png 1x, img/logo_mobile@2x.png 2x" alt="logo">
-            </a>
-
+        
             <!-- Nav-wrap -->
             <nav class="flex-child nav__wrap d-none d-lg-block">              
               <ul class="nav__menu">
 
                 <li class="active">
-                  <a href="index.html">Home</a>
+                 <%= link_to "Home",  root_path  %>
                 </li>
 
                 <li class="nav__dropdown">
                   <a href="#">Posts</a>
                   <ul class="nav__dropdown-menu">
-                    <li><a href="single-post-gallery.html">Gallery Post</a></li>
+                    <li><%= link_to "All Posts",  posts_path , id: "sign_up" %></li>
                     <li><a href="single-post.html">Video Post</a></li>
                     <li><a href="single-post.html">Audio Post</a></li>
                     <li><a href="single-post-quote.html">Quote Post</a></li>
                   </ul>
                 </li>
 
-                <li class="nav__dropdown">
-                  <a href="#">Pages</a>
-                  <ul class="nav__dropdown-menu">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="search-results.html">Search Results</a></li>
-                    <li><a href="categories.html">Categories</a></li>
-                    <li><a href="404.html">404</a></li>
-                  </ul>
-                </li>
-
-                <li class="nav__dropdown">
-                  <a href="#">Features</a>
-                  <ul class="nav__dropdown-menu">
-                    <li><a href="lazyload.html">Lazy Load</a></li>
-                    <li><a href="shortcodes.html">Shortcodes</a></li>
-                  </ul>
-                </li>
-
                 <li>
-                  <a href="#">Purchase</a>
+                 <%= link_to "Sign Up",  new_user_registration_path , id: "sign_up" %>
                 </li>
 
 
@@ -225,10 +202,7 @@
       <div class="container">
         <div class="flex-parent align-items-center">
           
-          <!-- Logo -->
-          <a href="index.html" class="logo d-none d-lg-block">
-            <img class="logo__img" src="img/logo.png" srcset="img/logo.png 1x, img/logo@2x.png 2x" alt="logo">
-          </a>
+        
 
           <!-- Ad Banner 728 -->
           <div class="text-center">
