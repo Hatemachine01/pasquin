@@ -48,7 +48,7 @@
             </div>
 
             <div class="entry__img-holder">
-              <img src="assets/img/blog/single_post_featured_img.jpg" alt="" class="entry__img">
+              <img src= <%= image_url('single_post_featured_img.jpg') %> alt="" class="entry__img">
             </div>
 
             <!-- Share -->
@@ -105,7 +105,7 @@
               <h5 class="uppercase">about author</h5>
             </div>
             <div class="entry-author clearfix">
-              <img alt="" data-src="/assets/img/blog/author_large.jpg" src="/assets/img/empty.png" class="avatar lazyload">
+              <img alt="" data-src=<%= image_url('author_large.jpg') %> src=<%= image_url('empty.png') %> class="avatar lazyload">
               <div class="entry-author__info">
                 <h6 class="entry-author__name">
                   <a href="#">John Carpet</a>
@@ -145,7 +145,7 @@
                     <div class="entry__img-holder">
                       <a href="single-post.html">
                         <div class="thumb-container thumb-75">
-                          <img data-src=<%= image_url('carousel_img_1.jpg') %> src="/assets/img/empty.png" class="entry__img lazyload" alt="">
+                          <img data-src=<%= image_url('carousel_img_1.jpg') %> src=<%= image_url('empty.png') %> class="entry__img lazyload" alt="">
                         </div>
                       </a>
                     </div>
@@ -164,7 +164,7 @@
                     <div class="entry__img-holder">
                       <a href="single-post.html">
                         <div class="thumb-container thumb-75">
-                          <img data-src="/assets/img/blog/carousel_img_2.jpg" src="/assets/img/empty.png" class="entry__img lazyload" alt="">
+                          <img data-src=<%= image_url('carousel_img_2.jpg') %> src=<%= image_url('empty.png') %> class="entry__img lazyload" alt="">
                         </div>
                       </a>
                     </div>
@@ -183,7 +183,7 @@
                     <div class="entry__img-holder">
                       <a href="single-post.html">
                         <div class="thumb-container thumb-75">
-                          <img data-src="/assets/img/blog/carousel_img_3.jpg" src="/assets/img/empty.png" class="entry__img lazyload" alt="">
+                          <img data-src= <%= image_url('carousel_img_3.jpg') %> src=<%= image_url('empty.png') %> class="entry__img lazyload" alt="">
                         </div>
                       </a>
                     </div>
@@ -212,7 +212,8 @@
               <li class="comment">  
                 <div class="comment-body">
                   <div class="comment-avatar">
-                    <img alt="" src="img/blog/comment_1.jpg">
+                   
+                    <img alt="" src= <%= image_url('comment_1.jpg') %>>
                   </div>
                   <div class="comment-text">
                     <h6 class="comment-author">Joeby Ragpa</h6>
@@ -228,7 +229,8 @@
                   <li class="comment">
                     <div class="comment-body">
                       <div class="comment-avatar">
-                        <img alt="" src="img/blog/comment_2.jpg">
+                        <img alt="" src=<%= image_url('comment_2.jpg') %>>
+
                       </div>
                       <div class="comment-text">
                         <h6 class="comment-author">Alexander Samokhin</h6>
@@ -247,7 +249,7 @@
               <li>
                 <div class="comment-body">
                   <div class="comment-avatar">
-                    <img alt="" src="img/blog/comment_3.jpg">
+                    <img alt="" src= <%= image_url('comment_3.jpg') %> >
                   </div>
                   <div class="comment-text">
                     <h6 class="comment-author">Chris Root</h6>
@@ -387,7 +389,7 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="/assets/img/blog/popular_post_1.jpg" src="img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_1.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                             </a>
                           </div>
                         </div>
@@ -409,7 +411,8 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="img/blog/popular_post_2.jpg" src="img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_2.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
+                           
                             </a>
                           </div>
                         </div>
@@ -431,7 +434,7 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="img/blog/popular_post_3.jpg" src="img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_3.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                             </a>
                           </div>
                         </div>
@@ -453,7 +456,7 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="/assets/img/blog/popular_post_4.jpg" src="img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_4.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                             </a>
                           </div>
                         </div>
@@ -480,7 +483,7 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="/assets/img/blog/popular_post_2.jpg" src="img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_2.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                             </a>
                           </div>
                         </div>
@@ -502,7 +505,7 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="/assets/img/blog/popular_post_1.jpg" src="img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_1.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                             </a>
                           </div>
                         </div>
@@ -524,7 +527,7 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="/assets/img/blog/popular_post_3.jpg" src="img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_3.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                             </a>
                           </div>
                         </div>
@@ -546,7 +549,7 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="/assets/img/blog/popular_post_4.jpg" src="img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_4.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                             </a>
                           </div>
                         </div>
@@ -573,7 +576,7 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="/assets/img/blog/popular_post_3.jpg" src="img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_3.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                             </a>
                           </div>
                         </div>
@@ -595,7 +598,7 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="img/blog/popular_post_1.jpg" src="/assets/img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_1.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                             </a>
                           </div>
                         </div>
@@ -617,7 +620,7 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="img/blog/popular_post_2.jpg" src="/assets/img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_2.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                             </a>
                           </div>
                         </div>
@@ -639,7 +642,8 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="img/blog/popular_post_4.jpg" src="/assets/img/empty.png" alt="" class=" lazyload">
+                              <img data-src= <%= image_url('popular_post_4.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
+                           
                             </a>
                           </div>
                         </div>
@@ -666,7 +670,8 @@
           <!-- Widget Ad 300 -->
           <div class="widget widget_media_image">
             <a href="#">
-              <img src="/assets/img/blog/placeholder_300.jpg" alt="">
+              <img src= <%= image_url('placeholder_300.jpg') %> alt="">
+               
             </a>
           </div> <!-- end widget ad 300 -->          
 
@@ -707,16 +712,17 @@
           <div class="widget widget-gallery-sm">
             <ul class="widget-gallery-sm__list">
               <li class="widget-gallery-sm__item">
-                <a href="#"><img src="/assets/img/blog/placeholder_125.jpg" alt=""></a>
+                <a href="#"><img src=<%= image_url('placeholder_125.jpg') %> alt=""></a>
               </li>
               <li class="widget-gallery-sm__item">
-                <a href="#"><img src="/assets/img/blog/placeholder_125.jpg" alt=""></a>
+                <a href="#"><img src=<%= image_url('placeholder_125.jpg') %> alt=""></a>
               </li>
               <li class="widget-gallery-sm__item">
-                <a href="#"><img src="/assets/img/blog/placeholder_125.jpg" alt=""></a>
+                <a href="#"><img src=<%= image_url('placeholder_125.jpg') %> alt=""></a>
               </li>
               <li class="widget-gallery-sm__item">
-                <a href="#"><img src="/assets/img/blog/placeholder_125.jpg" alt=""></a>
+                <a href="#"><img src=<%= image_url('placeholder_125.jpg') %> alt=""></a>
+          
               </li>
             </ul>
           </div> <!-- end widget ad 300 -->
@@ -730,7 +736,7 @@
                 <div class="entry__img-holder mb-0">
                   <a href="single-post.html">
                     <div class="thumb-bg-holder">
-                      <img data-src="/assets/img/blog/featured_post_img_1.jpg" src="img/blog/featured_post_img_1.jpg" class="entry__img owl-lazy" alt="">
+                      <img data-src=<%= image_url('featured_post_img_1.jpg') %> src=<%= image_url('featured_post_img_1.jpg') %> class="entry__img owl-lazy" alt="">
                       <div class="bottom-gradient"></div>
                     </div>
                   </a>
@@ -747,11 +753,12 @@
                 <div class="entry__img-holder mb-0">
                   <a href="single-post.html">
                     <div class="thumb-bg-holder">
-                      <img data-src="/assets/img/blog/featured_post_img_2.jpg" src="img/blog/featured_post_img_2.jpg" class="entry__img owl-lazy" alt="">
+                      <img data-src= <%= image_url('featured_post_img_2.jpg') %> src=<%= image_url('featured_post_img_2.jpg') %> class="entry__img owl-lazy" alt="">
                       <div class="bottom-gradient"></div>
                     </div>
                   </a>
                 </div>
+
 
                 <div class="thumb-text-holder">  
                   <h2 class="thumb-entry-title thumb-entry-title--sm">
@@ -773,7 +780,7 @@
                   <div class="post-list-small__img-holder">
                     <div class="thumb-container thumb-75">
                       <a href="single-post.html">
-                        <img data-src="/assets/img/blog/review_post_1.jpg" src="img/blog/review_post_1.jpg" alt="" class=" lazyload">
+                        <img data-src=  <%= image_url('review_post_1.jpg') %> src= <%= image_url('review_post_1.jpg') %> alt="" class=" lazyload">
                       </a>
                     </div>
                   </div>
@@ -798,7 +805,7 @@
                   <div class="post-list-small__img-holder">
                     <div class="thumb-container thumb-75">
                       <a href="single-post.html">
-                        <img data-src="/assets/img/blog/review_post_2.jpg" src="img/empty.png" alt="" class=" lazyload">
+                        <img data-src=  <%= image_url('review_post_2.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                       </a>
                     </div>
                   </div>
@@ -823,8 +830,9 @@
                   <div class="post-list-small__img-holder">
                     <div class="thumb-container thumb-75">
                       <a href="single-post.html">
-                        <img data-src="/assets/img/blog/review_post_3.jpg" src="img/empty.png" alt="" class=" lazyload">
+                        <img data-src=  <%= image_url('review_post_3.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                       </a>
+
                     </div>
                   </div>
                   <div class="post-list-small__body">
@@ -848,7 +856,8 @@
                   <div class="post-list-small__img-holder">
                     <div class="thumb-container thumb-75">
                       <a href="single-post.html">
-                        <img data-src="/assets/img/blog/review_post_4.jpg" src="img/empty.png" alt="" class=" lazyload">
+                        <img data-src= <%= image_url('review_post_4.jpg') %> src= <%= image_url('empty.png') %> alt="" class=" lazyload">
+
                       </a>
                     </div>
                   </div>
