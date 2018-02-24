@@ -28,14 +28,18 @@
             <article class="entry featured-posts-grid__entry">
               <div class="thumb-bg-holder owl-lazy" data-src= "<%= image_url('featured_grid_slide_1.jpg')%>" >
                 <img src= '<%= image_url('featured_grid_slide_1.jpg')%>' alt="" class="d-none">
-                <a href="single-post.html" class="thumb-url"></a>
+
+        <%= link_to 'EXAMPLE POST', post_path(@example_post) , class: "thumb-url" %>
+        
                 <div class="bottom-gradient"></div>
               </div>
 
+
               <div class="thumb-text-holder">
-                <a href="single-post.html" class="entry__meta-category entry__meta-category-color entry__meta-category-color--salad">Lifestyle</a>   
+                      <%= link_to 'EXAMPLE POST', post_path(@example_post) , class: "entry__meta-category entry__meta-category-color entry__meta-category-color--salad" %>
+               
                 <h2 class="thumb-entry-title">
-                  <a href="single-post.html">See a 360-Degree View of the Top of the Everest</a>
+                  <%= link_to 'EXAMPLE POST', post_path(@example_post)%>
                 </h2>
               </div>
             </article>
@@ -1595,7 +1599,7 @@
                         <div class="post-list-small__img-holder">
                           <div class="thumb-container thumb-75">
                             <a href="single-post.html">
-                              <img data-src="img/blog/popular_post_1.jpg" src=<%= image_url('empty.png') %> alt="" class=" lazyload">
+                              <img data-src=<%= image_url('popular_post_3.jpg') %> src=<%= image_url('empty.png') %> alt="" class=" lazyload">
                             </a>
                           </div>
                         </div>
