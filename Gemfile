@@ -40,6 +40,7 @@ gem 'jquery-rails'
 gem 'pundit'
 gem 'administrate'
 gem 'bourbon'
+gem 'omniauth-facebook'
 
 
 
