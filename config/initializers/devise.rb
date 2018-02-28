@@ -14,7 +14,7 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
   config.secret_key = 'e198682309a4d40bdb3e01f4b588bd19d18830fcc49806fba658473ae1b03d0fd15b5c291f58c9e5285daff320d6c0c667ec0d138cb429c7788773fd10f6fb58'
-  config.omniauth :facebook, ENV["FACEBOOK_KEY"], ENV["FACEBOOK_SECRET"], callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  config.omniauth :facebook, ENV["FACEBOOK_KEY"], ENV["FACEBOOK_SECRET"], callback_url: "http://localhost:3000/users/auth/facebook/callback" , scope: 'email', info_fields: 'email, first_name, last_name'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
