@@ -245,9 +245,10 @@ Implement INDEX html + Javascript
 //Monday Feb 26
 
 Add Notification system 
-Facebook Login
+Facebook Login [DONE]
+SKIP VALIDATIONS WITH FB LOGIN
 Depurar Template
-Review Post show permissions to allow non-logged users to read post
+Review Post show permissions to allow non-logged users to read post [DONE]
 Decide what content will be shown when logged/not-logged
 Show page should not include Post buttom 
 Create page should not include like buttom

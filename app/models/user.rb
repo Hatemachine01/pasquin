@@ -11,8 +11,8 @@ class User < ApplicationRecord
 
   ##Validations
 
-  # validates_presence_of :first_name, :last_name , :unless =>  :from_omniauth? 
-  # validates_length_of :first_name, :last_name, :minimum => 3, :maximum => 30
+   validates_presence_of :first_name, :last_name  , :unless =>  :from_omniauth? 
+   validates_length_of :first_name, :last_name, :minimum => 3, :maximum => 30 , :unless =>  :from_omniauth? 
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -33,10 +33,9 @@ class User < ApplicationRecord
 
   private
 
-
-  # def from_omniauth?
-  #  return true if  provider && uid 
-  # end
+   def from_omniauth?
+    provider && uid 
+  end 
 
 
   def set_defaults
