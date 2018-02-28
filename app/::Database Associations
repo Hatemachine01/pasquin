@@ -247,6 +247,7 @@ Implement INDEX html + Javascript
 Add Notification system 
 Facebook Login [DONE]
 SKIP VALIDATIONS WITH FB LOGIN [DONE]
+Implement Comments Logic
 Depurar Template
 Review Post show permissions to allow non-logged users to read post [DONE]
 Decide what content will be shown when logged/not-logged
