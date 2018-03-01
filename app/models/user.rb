@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   ##Database Associations
   has_many :posts
+  has_many :comments
 
   ##Validations
 
