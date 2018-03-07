@@ -34,5 +34,12 @@ RSpec.describe Post, type: :model do
     
       expect(relation.macro).to eq(:has_many)
     end
+
+     it 'should have many taggings' do
+      relation = described_class.reflect_on_association(:taggings)
+    
+      expect(relation.macro).to eq(:has_many)
+    end
+
   end
 end
