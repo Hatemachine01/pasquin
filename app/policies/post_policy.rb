@@ -1,5 +1,11 @@
 class PostPolicy < ApplicationPolicy
   	
+    def index?	
+	  true
+    end
+
+	
+
   	def edit?
 		record.user_id == user.id 
 	end

@@ -64,3 +64,4 @@ class PostDashboard < Administrate::BaseDashboard
   #   "Post ##{post.id}"
   # end
 end
+

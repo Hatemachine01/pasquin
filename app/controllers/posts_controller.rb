@@ -3,16 +3,22 @@ before_action :authenticate_user! , except: [:show , :index]
 before_action :set_post , only:  [:show , :edit, :update , :destroy]
 
 	def index
-    @post = Post.all
+    # @post = Post.all
+    @posts = if params[:tag]
+      Post.tagged_with(params[:tag])
+    else
+      Post.all
+    end
   end
 
 
   def new
-		@post = Post.new
+		@post = Post.new 
 	end
 
 	def create
 		@post = Post.new(post_params)
+    authorize @post
 		@post.user_id = current_user.id
   	if @post.save
    		redirect_to @post, notice: "Post created succesfully"
@@ -55,6 +61,6 @@ before_action :set_post , only:  [:show , :edit, :update , :destroy]
 	end
 
 	def post_params
-		params.require(:post).permit(:title, :body)	
+		params.require(:post).permit(:title, :body , :tag_list)	
 	end
 end

@@ -6,11 +6,11 @@ class Post < ApplicationRecord
 
 
   #Validations
-  validates_presence_of :title, :body, :date
+  validates_presence_of :title, :body
 
   after_initialize :set_defaults
 
-  
+
   def self.tagged_with(name)
     Tag.find_by!(name: name).posts
   end
@@ -35,6 +35,4 @@ class Post < ApplicationRecord
       self.likes ||= 0
       self.date  ||= Date.today
     end
-
-
 end

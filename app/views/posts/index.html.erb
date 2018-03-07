@@ -1,3 +1,20 @@
-<%= @post.each do |post| %>
-<%= post.inspect %>
-<% end %>
+<h1>Posts</h1>
+
+<div id="tag_cloud">
+  <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <h2><%= link_to post.title, post %></h2>
+    <%= simple_format post.body %>
+    <p>
+      Tags: <%= raw post.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+    </p>
+    <p><%= link_to "Edit post", edit_post_path(post) %></p>
+  <% end %>
+</div>
+
+<p><%= link_to "New post", new_post_path %></p>
