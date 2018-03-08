@@ -266,3 +266,4 @@ Images not being used : placeholder_leaderboard
 
 Implement Tag System [DONE]
 Consider implementing depend on destroy for when posts are deleted so that association gets deleted as well
+Test
