@@ -42,6 +42,7 @@ class Post < ApplicationRecord
      p "TAG.CLASS #{@tag.class}" 
      p "SELF.TAG #{self.tags}"
   end
+  
 
   private
 
