@@ -34,6 +34,7 @@ class Post < ApplicationRecord
     # the method below takes an array as an input and .map will return
     # a new array of the same size, that's why self.tags is assigned to an array
     # and that's why it makes sense because an activerecord association class must be an array
+    # Tagging is populated automatically when self.tags (post.tags) is given a value. For every element in the array self.tags, there is going to be a new record in tagging, which will associate the post id and the tag id.
     self.tags = names.split(',').map do |n|
       @tag = Tag.where(name: n.strip).first_or_create!
     end
