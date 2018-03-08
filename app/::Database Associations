@@ -264,4 +264,5 @@ Images not being used : placeholder_leaderboard
 
 //March 6 2018
 
-Implement Tag System
+Implement Tag System [DONE]
+Consider implementing depend on destroy for when posts are deleted so that association gets deleted as well

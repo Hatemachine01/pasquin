@@ -17,8 +17,9 @@ before_action :set_post , only:  [:show , :edit, :update , :destroy]
 	end
 
 	def create
-		@post = Post.new(post_params)
-    authorize @post
+		p 'Inside POST create' * 10
+    p post_params 
+    p @post = Post.new(post_params)
 		@post.user_id = current_user.id
   	if @post.save
    		redirect_to @post, notice: "Post created succesfully"
