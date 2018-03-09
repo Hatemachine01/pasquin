@@ -3,6 +3,8 @@ before_action :authenticate_user! , except: [:show , :index]
 before_action :set_post , only:  [:show , :edit, :update , :destroy]
 
 	def index
+    p  "Inside Post Index" * 10
+    p params[:tag]
     # @post = Post.all
     @posts = if params[:tag]
       Post.tagged_with(params[:tag])
