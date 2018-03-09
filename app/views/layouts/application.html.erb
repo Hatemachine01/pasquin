@@ -43,6 +43,8 @@
 
     <%= yield %>
 
+  <%= js add_gritter(flash[:notice], title: "Pasquin Notification", sticky: false) %>  
+
   <!-- Footer -->
    
   <%= render 'shared/footer' %> 
