@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 		if @comment.save
    			redirect_to post_path(params[:post_id]), notice: "Comment submitted succesfully"
   		else
-   			redirect_to root
+   			redirect_to root_path
   		end
 	end
  end
