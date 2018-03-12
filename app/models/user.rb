@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :omniauthable, :omniauth_providers => [:facebook]
@@ -6,15 +7,52 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   after_initialize :set_defaults
 
+
+
   ##Database Associations
   has_many :posts
   has_many :comments
 
-  ##Validations
+  has_many :active_relationships, class_name:  "Relationship",
+                                  foreign_key: "follower_id",
+                                  dependent:   :destroy
 
- 
-   validates_presence_of :first_name, :last_name  #, :unless =>  :from_omniauth? 
-   validates_length_of :first_name, :last_name, :minimum => 1, :maximum => 30 #, :unless =>  :from_omniauth? 
+  has_many :passive_relationships, class_name:  "Relationship",
+                                  foreign_key: "followed_id",
+                                  dependent:   :destroy                                
+
+  has_many :following, through: :active_relationships, source: :followed
+
+  has_many :followers, through: :passive_relationships, source: :follower
+
+
+  ##Validations 
+  validates_presence_of :first_name, :last_name  #, :unless =>  :from_omniauth? 
+  validates_length_of :first_name, :last_name, :minimum => 1, :maximum => 30 #, :unless =>  :from_omniauth? 
+
+  def self.test
+    5
+  end
+
+  def follow_test
+    5
+  end
+
+  #Following methods
+  def follow(other_user)
+    p "dentro de follow"
+    following << other_user
+  end
+
+  # Unfollows a user.
+  def unfollow(other_user)
+    following.delete(other_user)
+  end
+
+  # Returns true if the current user is following the other user.
+  def following?(other_user)
+    following.include?(other_user)
+  end
 
 
   def self.new_with_session(params, session)
@@ -36,8 +74,9 @@ class User < ApplicationRecord
     end
   end
 
-  private
 
+
+  private
   #  def from_omniauth?
   #   provider && uid 
   # end 
