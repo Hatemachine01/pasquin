@@ -41,6 +41,7 @@ gem 'pundit'
 gem 'administrate'
 gem 'bourbon'
 gem 'omniauth-facebook'
+gem "gritter", "1.2.0"
 
 
 
