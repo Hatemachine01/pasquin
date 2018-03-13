@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :taggings ,  dependent: :delete_all
-  has_many :tags, through: :taggings
+  has_many :tags, through: :taggings 
 
 
   #Validations
