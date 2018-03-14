@@ -1,0 +1,12 @@
+<% if current_user.active_relationships.find_by(followed_id: @user.id) != nil  %>
+
+	<%= form_for(current_user.active_relationships.find_by(followed_id: @user.id),
+	             html: { method: :delete }) do |f| %>
+	  <%= f.submit "Unfollow", class: "btn" %>
+	<% end %>
+
+<% else %>
+
+	<p> NO FOLLOWERS/LONELY BOY/NO ONE LIKES YOU/ YOU WILL DIE ALONE</p>
+
+<% end %>
