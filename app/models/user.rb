@@ -40,7 +40,7 @@ class User < ApplicationRecord
 
   #Following methods
   def follow(other_user)
-    p "dentro de follow"
+    p "dentro de User Model method follow"
     following << other_user
   end
 
