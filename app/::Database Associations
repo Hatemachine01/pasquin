@@ -244,17 +244,17 @@ Implement INDEX html + Javascript
 
 //Monday Feb 26
 
-Add Notification system 
+Add Notification system [DONE]
 Facebook Login [DONE]
 SKIP VALIDATIONS WITH FB LOGIN [DONE]
-Implement Comments Logic
-Depurar Template
+Implement Comments Logic [DONE]
+Depurar Template [DONE]
 Review Post show permissions to allow non-logged users to read post [DONE]
-Decide what content will be shown when logged/not-logged
-Show page should not include Post buttom 
+Decide what content will be shown when logged/not-logged [DONE]
+Show page should not include Post buttom [DONE]
 Create page should not include like buttom
-Implement Create view 
-Check strong parameters for Post
+Implement Create view  [DONE]
+Check strong parameters for Post [DONE]
 
 //Weds Feb 28
 
@@ -265,6 +265,6 @@ Images not being used : placeholder_leaderboard
 //March 6 2018
 
 Implement Tag System [DONE]
-Consider implementing depend on destroy for when posts are deleted so that association gets deleted as well
+Consider implementing depend on destroy for when posts are deleted so that association gets deleted as well [DONE]
 Test 
 Test Javier

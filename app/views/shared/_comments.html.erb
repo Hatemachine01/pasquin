@@ -30,6 +30,8 @@
                         <p>
                          <%= comment.body %>
                         </p>
+                        <%= link_to 'Delete', comment_path(comment.id, :post_id => @post.id),
+                         data: {:confirm => 'Are you sure?'}, :method => :delete %>
                         <a href="#" class="comment-reply">Reply</a>
                       </div>
                     </div>

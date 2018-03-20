@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+before_action :set_comment, :set_post , only:  [:destroy]
+
 
 
 	def create
@@ -10,11 +12,30 @@ class CommentsController < ApplicationController
    			redirect_to root_path
   		end
 	end
+
+
+  	def destroy
+       @comment.delete
+       
+       redirect_to post_path(@post), notice: "Your Comment Was Deleted succesfully"
+	end
+
+
+	def set_comment
+		@comment = Comment.find(params[:id])
+		p @comment.post_id
+	end
+
+	def set_post
+		@post = Post.find(params[:post_id])
+		p @post
+	end
  end
 
 
 
 private
+
 
 
 def comments_params
