@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :comments
   
   get 'tags/:tag', to: 'posts#index', as: :tag
+  
   get 'profile/:id', to: 'users#show', as: :profile
   
 
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   resources :relationships,       only: [:create, :destroy]
   
   devise_for :users, :controllers => { :registrations => "registrations" , :omniauth_callbacks => "users/omniauth_callbacks" } 
+  
   get '/users/:id/following', :to => 'users#following' , as: :following   #or your route
   get '/users/:id/followers', :to => 'users#followers' , as: :follower #or your route
   
