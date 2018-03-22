@@ -29,5 +29,20 @@ describe 'Comments CRUD' do
 
     expect(page.status_code).to eq(200)
   end
+
+  it 'Link to delete should not be rendered if you are not the owner of the comment ' do
+    
+    visit post_path(@post)
+
+    fill_in 'body', with: "RSPEC RULES"
+    click_on "Submit"
+
+    logout(@user)
+    login_as(@non_authorized_user, :scope => :user)
+
+    visit post_path(@post)
+
+    expect(page).to_not have_content("Delete")
+  end
 end
 
