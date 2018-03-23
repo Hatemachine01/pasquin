@@ -1,7 +1,18 @@
-<%= form_tag comments_path do  %>
-  <%= text_area_tag :body , nil , placeholder: 'Leave your comment' %> 
-  <%= hidden_field_tag :post_id, @post.id %>
-  <%= submit_tag 'Submit'%>
+<% if "#{controller_name}/#{action_name}"  == 'comments/edit' %> 
+	<%= form_for @comment, url: {action: "update"} do |f| %>
+	  	<%= text_area_tag :body , nil , placeholder: 'Edit your comment' %> 
+	  	<%= hidden_field_tag :post_id, @post.id %>
+		<%= f.submit 'Submit'%>
+    <% end %>
+<% else %>
+	<%= form_tag comments_path do  %>
+	  	<%= text_area_tag :body , nil , placeholder: 'Leave your comment' %> 
+	  	<%= hidden_field_tag :post_id, @post.id %>
+		<%= submit_tag 'Submit'%>
+	<% end %>
 <% end %>
+
+
+
 
 

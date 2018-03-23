@@ -17,6 +17,23 @@ describe 'Comments CRUD' do
     expect(page).to have_content("RSPEC RULES")
   end
 
+
+  it 'can be edited' do
+    
+    visit post_path(@post)
+    fill_in 'body', with: "RSPEC RULES"
+    click_on "Submit"
+    
+    
+    click_on "Edit"
+
+    fill_in 'body', with: "RSPEC RULES EDITED"
+    click_on "Submit"
+
+    expect(page).to have_content("EDITED")
+
+  end
+
   it 'Comments should have a link to delete them' do
     
     visit post_path(@post)

@@ -1,9 +1,11 @@
 class CommentsController < ApplicationController
-before_action :set_comment, :set_post , only:  [:destroy]
+before_action :set_comment, :set_post , only:  [:destroy, :edit , :update, :show]
+
 
 
 
 	def create
+	puts 'inside create comment'
 		@comment = Comment.new(comments_params)
 		@comment.user_id = current_user.id
 		if @comment.save
@@ -13,6 +15,21 @@ before_action :set_comment, :set_post , only:  [:destroy]
   		end
 	end
 
+	def show
+	end
+
+	def edit
+    	authorize @comment 
+  	end
+
+  	def update
+  	puts 'inside update comment'
+    	if @comment.update(comments_params)
+    		redirect_to @post, notice: "Comment updated succesfully"
+    	else
+    		render :edit
+    	end
+  	end
 
   	def destroy
        @comment.delete
