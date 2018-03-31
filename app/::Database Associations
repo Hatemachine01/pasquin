@@ -268,3 +268,23 @@ Implement Tag System [DONE]
 Consider implementing depend on destroy for when posts are deleted so that association gets deleted as well [DONE]
 Test 
 Test Javier
+
+
+
+
+//March 27 2019
+
+1.Add dislikes attribute to DB
+	1.		rails generate migration AddDislikesToPosts     dislikes:integer
+	1.2		Set default amount
+
+
+2. Add bootstrap button to show post's dislikes and likes with AJAX
+	1.1
+
+	<button type="button" class="btn btn-primary">Primary <span class="badge">7</span></button>
+
+	1.2 Active Ajax functioning 
+		remote: true
+
+	1.3 Put button in partial. Create js.erb file and render partial from there

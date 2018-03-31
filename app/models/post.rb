@@ -47,7 +47,8 @@ class Post < ApplicationRecord
   private
 
     def set_defaults
-      self.likes ||= 0
-      self.date  ||= Date.today
+      self.dislikes ||= 0
+      self.likes    ||= 0
+      self.date     ||= Date.today
     end
 end
