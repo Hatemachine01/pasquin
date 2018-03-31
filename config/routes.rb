@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   #resources :users
   resources :comments
   
+
+  put 'posts/:id/like',  :to => 'posts#like' , as: :like
+  get 'posts/:id/dislike',  :to => 'posts#dislike' , as: :dislike
+
+
   get 'tags/:tag', to: 'posts#index', as: :tag
   
   get 'profile/:id', to: 'users#show', as: :profile

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 before_action :authenticate_user! , except: [:show , :index]
-before_action :set_post , only:  [:show , :edit, :update , :destroy]
+before_action :set_post , only:  [:show , :edit, :update , :destroy, :like, :dislike]
 
 	def index
     p  "Inside Post Index" * 10
@@ -53,6 +53,14 @@ before_action :set_post , only:  [:show , :edit, :update , :destroy]
     end
   end
 
+  def like
+    authorize @post
+    @post.increment!(:likes)    
+  end
+  
+  def dislike
+    @post.increment!(:dislikes)
+  end
 
 
 
@@ -64,6 +72,6 @@ before_action :set_post , only:  [:show , :edit, :update , :destroy]
 	end
 
 	def post_params
-		params.require(:post).permit(:title, :body , :tag_list)	
+		params.require(:post).permit(:title, :body , :tag_list , :id)	
 	end
 end

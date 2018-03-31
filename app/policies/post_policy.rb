@@ -4,7 +4,9 @@ class PostPolicy < ApplicationPolicy
 	  true
     end
 
-	
+	def like?
+		true
+	end	
 
   	def edit?
 		record.user_id == user.id 

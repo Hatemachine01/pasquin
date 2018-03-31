@@ -1,0 +1,7 @@
+  <%= link_to like_path(@post.id), method: 'put' , class: 'btn btn-primary', remote:true, data: { } do %>
+     likes <%= content_tag :span, @post.likes, class: 'badge' %>
+   <% end %>
+
+  <%= link_to dislike_path(@post.id), class: 'btn btn-danger', data: {remote:true } do %>
+      Dislikes <%= content_tag :span, @post.dislikes, class: 'badge' %>
+  <% end %> 
