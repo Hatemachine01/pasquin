@@ -49,6 +49,9 @@
               <img src= <%= image_url('single_post_featured_img.jpg') %> alt="" class="entry__img">
             </div>
 
+
+
+
             <!-- Share -->
           <!--   <div class="entry__share">
               <div class="socials entry__share-socials">
@@ -73,7 +76,20 @@
             <div class="entry__article">
               <p> <%= @post.body %> </p>
 
-              
+              <!-- likes and dislikes -->
+            
+            <div class="entry__tags">
+
+              <%= link_to root_path, class: 'btn btn-primary', data: {remote:true } do %>
+               likes <%= content_tag :span, @post.likes, class: 'badge' %>
+              <% end %>
+
+              <%= link_to '', class: 'btn btn-danger', data: {remote:true } do %>
+                  Dislikes <%= content_tag :span, @post.dislikes, class: 'badge' %>
+              <% end %>         
+           </div>
+
+
 
 
               <!-- tags -->
